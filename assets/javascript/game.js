@@ -6,7 +6,7 @@ prompt('Press any key to get started!');
 // list of different species of shark for hangman game.
 
 var islandWordsArr = ['antigua', 'beach', 'pineapple', 'shark', 
-'palmtree','ocean', 'sunblock', 'rum','ice cream', 'beach chair', 'sun', 'breeze', 'exotic', 'bahamas', 'Lemon','spices', 'surfing', 'scuba', 'fish', 'beach ball']
+'palmtree','ocean', 'sunblock', 'rum','waves', 'lifeguard', 'sun', 'breeze', 'exotic', 'bahamas', 'Lemon','spices', 'surfing', 'scuba', 'fish', 'beach ball']
 
 // using above array we choose a random word.
 var islandWords = islandWordsArr[Math.floor(Math.random() * islandWordsArr.length)];
@@ -24,13 +24,14 @@ var answerArray = [];
 // number of underscores correlates to the randomly selected word in the array
 
 function startUp() {
+  console.log(islandWords)
   for (var i = 0; i < islandWords.length; i++) {
-    answerArray.push("_");
+    answerArray.push(" _ ");
   }
 
   // putting in a string
   s = answerArray.join(" ");
-  document.querySelector("#counter").innerHTML = answerArray.join("");
+  document.querySelector("#counter").innerHTML = answerArray.join(" ");
 }
 
 function letter() {
@@ -49,5 +50,11 @@ function letter() {
   if(count>5) {
     document.getElementById("stat").innerHTML = "You should have guessed it by now!";
   }
+}
+document.onkeyup = function(event) {
+  console.log (event.key.toLocaleLowerCase())
+
+console.log (islandWords.indexOf(event.key, 0))
+
 }
 startUp()
