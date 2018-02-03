@@ -1,0 +1,35 @@
+body {
+    background-color: aqua;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+    color:$white;
+    height:100%;
+    text-align:center;
+    font-size:18px;
+  }
+
+  #alphabet {
+    @include clear;
+    margin:15px auto;
+    padding:0;
+    max-width:900px;
+  }
+  
+  #alphabet li {
+    float:left;
+    margin: 0 10px 10px 0;
+    list-style:none;
+    width:35px;
+    height:30px;
+    padding-top:10px;
+    background:$white;
+    color:$base-color;
+    cursor:pointer;
+    @include corners(5px);
+    border: solid 1px $white;
+   
+    &:hover{
+        background:$base-color;
+        border: solid 1px $white;
+        color:$white;
+      }
+  }
